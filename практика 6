@@ -1,0 +1,67 @@
+1
+
+import random
+
+def nested_sum():
+    
+    i = random.randint(1, 10)
+    t = 0
+    matrix = []
+    for x in range(i):
+        matrix.append([])
+        for y in range(i):
+            matrix[x].append(random.randint(1, 9))
+            t += matrix[x][y]
+    print(matrix, t)
+    
+nested_sum()
+
+2
+
+import random
+
+def cumsum():
+    i = random.randint(1, 10)
+    matrix = []
+    cum = []
+    for x in range(i):
+        matrix.append(random.randint(1, 9))
+    for i in range(0,len(matrix)):
+        cum.append(sum(matrix[:i+1]))
+
+    print(matrix, cum)
+    
+cumsum()
+
+3
+
+import random
+
+def middle():
+    
+    i = random.randint(1, 10)
+    matrix = []
+    for x in range(i):
+        matrix.append([])
+        for y in range(i):
+            matrix[x].append(random.randint(1, 9))
+    print(matrix, matrix[1:-1])
+    
+middle()
+
+4
+
+t=[1,2,3,4,5]
+def chop(t):
+  return t[-1:1]
+ print (chop(t))
+ 
+5
+
+def is_sorted(lst):
+  if lst == sorted(lst):
+    return True
+  else:
+    return False
+print (is_sorted([1,2,3,4,5]))
+print (is_sorted([1,6,2,7,3,8,4,9,5]))

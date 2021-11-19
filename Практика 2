@@ -1,0 +1,66 @@
+1
+
+a = int(input())
+if a % 2 == 0:
+    print("Число четное", a)
+else:
+    print("Число нечетное", a)
+    
+2
+
+a = float(input())  
+print(a * 1.8 + 32)
+
+3
+
+a = int(input())
+if a % 5 != 0 and a % 7 != 0:
+    print('00')
+elif a % 5 == 0 and a % 7 != 0:
+    print('01')
+elif a % 5 != 0 and a % 7 == 0:    
+    print('10')
+else:
+    print("11")
+   
+4
+
+import math
+
+print("Введите коэффициенты для уравнения")
+print("ax^2 + bx + c = 0:")
+a = float(input())
+b = float(input())
+c = float(input())
+D = b ** 2 - 4 * a * c
+if D > 0:
+    X1 = (-(b) + math.sqrt(D)) / (2 * a)
+    X2 = (-(b) - math.sqrt(D)) / (2 * a)
+    print(X1, X2)
+elif D = 0:
+    print(-(b) / (2 * a))
+else:
+    print("Не имеет корней")
+    
+5
+
+import random
+
+print('Введите максимально возможное число')
+max_n = int(input())
+n = random.randint(1, max_n)
+
+print('Введите количество попыток')
+k = int(input())
+
+for i in range(k):
+    print('Введите число')
+    user_n = int(input())
+    if user_n > n:
+        print('Искомое число меньше')
+    elif user_n < n:
+        print('Искомое число больше')
+    elif user_n == n:
+        print('Вы угадали искомое число!')
+        break
+print('Конец игры')

@@ -1,0 +1,49 @@
+1
+
+speed = int(input("Какая скорость транспортного средства в км/ч? " ))
+time = int(input("Сколько часов оно двигалось? "))
+print("Пройденное расстояние ")
+print("--------------------------")
+for i in range(1,time+1):
+    print(i, speed*i)
+ 
+ 2
+ 
+ x = 0
+s = 0
+while x == 0:
+    a = int(input())
+    if a >= 0:
+        s += a
+    else:
+        x = 1
+print(s)
+
+3
+
+n = int(input()) 
+factorial = 1
+while n > 1:
+    factorial *= n
+    n -= 1
+ print(factorial)
+ 
+ 4
+ 
+quantity = int(input('Стартовое количество: '))
+percent = float(input('Среднесуточное увеличение: '))
+day = int(input('Количество дней для размножения: '))
+print('День', "Популяция")
+print('1    ', quantity)
+for i in range(2, day + 1):
+    quantity = (quantity * (percent / 100)) + quantity
+    print(i,'   ', round(quantity, 2))
+    
+5
+
+k = int(input('Кол-во: '))
+s =' '
+print ('##')
+print("#",'#')
+for i in range(0, k-2):
+  print('#',s * i,'#')

@@ -1,0 +1,119 @@
+1
+
+import random
+
+def main():
+    numb= int(input("Видите свое число(не больше 30):"))
+    i = random.randint(1, 10)
+    matrix = []
+    cum = []
+    for x in range(i):
+        matrix.append(random.randint(1, 30))
+    for u in range(0,len(matrix)):
+        if matrix[u] >= numb:
+            cum.append(matrix[u])
+    print (matrix, cum)
+
+main()
+
+2
+
+import random
+
+
+def main():
+    matrix = []
+    for x in range(3):
+        matrix.append([])
+        for y in range(3):
+            matrix[x].append(random.randint(1, 9))
+    print (matrix)
+    result = LoShu(matrix)
+
+    print(result)
+    
+def LoShu(matrix):
+
+
+    row1 = matrix[0][0] + matrix[0][1] + matrix[0][2]
+    row2 = matrix[1][0] + matrix[1][1] + matrix[1][2]
+    row3 = matrix[2][0] + matrix[2][1] + matrix[2][2]
+
+    ver1 = matrix[0][0] + matrix[1][0] + matrix[2][0]
+    ver2 = matrix[0][1] + matrix[1][1] + matrix[2][1]
+    ver3 = matrix[0][2] + matrix[1][2] + matrix[2][2]
+
+    diag1 = matrix[0][0] + matrix[1][1] + matrix[2][2]
+    diag2 = matrix[0][2] + matrix[1][1] + matrix[2][0]
+
+    checkList = [row1,row2,row3,ver1,ver2,ver3,diag1,diag2]
+
+    temp = checkList[0]
+
+    for x in range (0, len(checkList)):
+        if checkList[x] != temp:
+            return ("не квадрат Ло Шу")
+            
+    return ("квадрат Ло Шу")
+main() 
+
+3
+
+def main():
+    name= input("Видите свои ФИО:")
+    name=name.title()
+    name= name.split(" ")
+    init = ""
+    for i in name:
+        init = init + i[0] + "."
+    print(init)
+
+main()
+
+4
+
+import random
+
+country_dlist = [{'capital': 'Moskow',
+  'name': 'Russia'},
+ {'capital': 'Talin',
+  'name': 'Estonia'}
+ ]
+
+tot_points = 0
+a = len(country_dlist)
+for i in range(a):
+    choice = random.choice(country_dlist)
+    que = country_dlist.remove(choice)
+    capital = input("Please enter the captial for country {}: ".format(choice['name']))
+    if capital.lower() == choice['capital'].lower():
+        tot_points += 1
+print ('You scored', tot_points)
+
+5
+
+def glas(a):
+    spis = 'а, о, и, е, ё, э, ы, у, ю, я'
+    spis = spis.split(', ')
+    a = list(a)
+    kol = 0
+    for i in range(len(a)):
+        if a[i] in spis:
+            kol += 1
+    return kol
+    
+def sogl(a):
+    spis = 'б, в, г, д, ж, з, й, к, л, м, н, п, р, с, т, ф, х, ц, ч, ш, щ'
+    spis = spis.split(', ')
+    a = list(a)
+    kol = 0
+    for i in range(len(a)):
+        if a[i] in spis:
+            kol += 1
+    return kol
+a = input('Введите строку: ')
+fun = int(input('Введите 0, если хотите узнать кол-во гласных русских букв в строке и 1, если согласных: '))
+if fun == 0:
+    print(glas(a))
+elif fun == 1:
+    print(sogl(a))
